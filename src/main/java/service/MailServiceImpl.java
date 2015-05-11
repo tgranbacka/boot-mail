@@ -39,13 +39,15 @@ public class MailServiceImpl implements MailService {
             MimeMessage message = mailSender.createMimeMessage();
 
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setTo("photo@granbacka.se");
-
+            helper.setTo("tgranbacka@gmail.com");
+            helper.setFrom("thomas@granbacka.se");
+            helper.setSubject("Testmejl");
             helper.setText("Mejlar");
 
             FileSystemResource file = new FileSystemResource(new File("/Users/tgranbacka/Downloads/dsc1144.jpg"));
             helper.addAttachment("dsc1144.jpg", file);
 
+            message.setContent(helper.getMimeMultipart());
             mailSender.send(message);
             logger.debug("Mejl skickat");
         } catch (Exception e) {
