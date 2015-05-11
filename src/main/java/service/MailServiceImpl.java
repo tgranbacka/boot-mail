@@ -1,14 +1,9 @@
 package service;
 
-import beans.MailBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
@@ -39,12 +34,12 @@ public class MailServiceImpl implements MailService {
             MimeMessage message = mailSender.createMimeMessage();
 
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setTo("agnes@granbacka.se");
-            helper.setFrom("thomas@granbacka.se");
-            helper.setSubject("Hej sötnos");
+            helper.setTo("test@test.se");
+            helper.setFrom("test@test.se");
+            helper.setSubject("Kexet");
             helper.setText("tjena kexet står du har och smular");
 
-            FileSystemResource file = new FileSystemResource(new File("/Users/tgranbacka/Downloads/dsc1144.jpg"));
+            FileSystemResource file = new FileSystemResource(new File("/Users/file"));
             helper.addAttachment("dsc1144.jpg", file);
 
             message.setContent(helper.getMimeMultipart());
