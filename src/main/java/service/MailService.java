@@ -6,5 +6,5 @@ import beans.MailBody;
  * Created by tgranbacka on 15-05-10.
  */
 public interface MailService {
-    public void send(MailBody mailBody) throws Exception;
+    public void work() throws Exception;
 }

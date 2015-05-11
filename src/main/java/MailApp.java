@@ -1,13 +1,24 @@
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import service.MailService;
 
 @SpringBootApplication
 public class MailApp {
 
-
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(MailApp.class, args);
+        try {
+            SpringApplication.run(MailApp.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("mailapp-spring.xml");
+        MailService mailService = (MailService) context.getBean("mailService");
+        mailService.work();
+
     }
 
 }
