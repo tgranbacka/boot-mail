@@ -36,23 +36,18 @@ public class MailServiceImpl implements MailService {
     public void work() throws Exception {
 
         try {
-            ApplicationContext context =
-                    new ClassPathXmlApplicationContext("mailapp-spring.xml");
-
-
             MimeMessage message = mailSender.createMimeMessage();
 
-// use the true flag to indicate you need a multipart message
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
             helper.setTo("photo@granbacka.se");
 
             helper.setText("Mejlar");
 
-// let's attach the infamous windows Sample file (this time copied to c:/)
             FileSystemResource file = new FileSystemResource(new File("/Users/tgranbacka/Downloads/dsc1144.jpg"));
             helper.addAttachment("dsc1144.jpg", file);
 
             mailSender.send(message);
+            logger.debug("Mejl skickat");
         } catch (Exception e) {
             logger.error("Wtf", e);
         }
