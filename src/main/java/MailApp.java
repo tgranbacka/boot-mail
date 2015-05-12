@@ -14,11 +14,12 @@ public class MailApp {
             e.printStackTrace();
         }
 
+
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("mailapp-spring.xml");
         MailService mailService = (MailService) context.getBean("mailService");
-        mailService.work();
+        mailService.process();
+
 
     }
-
 }
