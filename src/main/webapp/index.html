@@ -15,20 +15,54 @@
 
     <div class="well well-lg">
         <div class="form-group">
-            <label for="adress">E-postadress (ej editerbar)</label>
-            <input type="email" class="form-control" id="adress" placeholder="{{main.adress}}" readonly>
+            <label for="address">E-postadress</label>
+            <input type="email" class="form-control" id="address" placeholder="{{main.address}}" readonly>
         </div>
         <div class="form-group">
-            <label for="arende">Ärende</label>
-            <input type="subject" class="form-control" name="{{main.arende}}" id="arende" placeholder="{{main.arende}}">
+            <label for="subject">Ärende</label>
+            <input type="subject" class="form-control" name="{{main.subject}}" id="subject"
+                   placeholder="{{main.arende}}">
         </div>
         <div class="form-group">
             <label for="attachment">Lägg till fil</label>
             <input type="file" id="attachment">
-            <p class="help-block">jpg, doc, docx, pdf</p>
         </div>
 
+        <div class="form-group">
+            <label for="mailbody">Meddelande</label>
+            <textarea class="form-control" id="mailbody" rows="3"></textarea>
+        </div>
     </div>
+</div>
+<div class="container">
+    <div class="well well-lg">
+        <h4>Headerdata:</h4>
+
+        <div class="form-group">
+            <!--label for="kategori">&Auml;rendeid</label-->
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+                <li role="presentation"><a role="menuitem" href="#">Regular link</a></li>
+                <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label for="arendeid">&Auml;rendeid</label>
+            <input type="text" class="form-control" name="{{main.arendeid}}" id="arendeid" placeholder="Ärendeid">
+        </div>
+
+        <div class="form-group">
+            <label for="ahsarendeid">&Auml;rendeid</label>
+            <input type="text" class="form-control" name="{{main.ahsarendeid}}" id="ahsarendeid" placeholder="ÄHSÄrendeid">
+        </div>
+
+        <div class="form-group">
+            <label for="personnummer">Personnummer</label>
+            <input type="text" class="form-control" name="{{main.personnummer}}" id="personnummer" placeholder="yyyyMMddnnnn">
+        </div>
+    </div>
+
 </div>
 
 </body>
