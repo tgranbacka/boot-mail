@@ -61,11 +61,24 @@
             <label for="personnummer">Personnummer</label>
             <input type="text" class="form-control" name="{{main.personnummer}}" id="personnummer" placeholder="yyyyMMddnnnn">
         </div>
+
+        <button type="button" id="sendButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+            Skicka e-post
+        </button>
+
+
     </div>
 
 </div>
 
 </body>
 
-</body>
 </html>
+
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
